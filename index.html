@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Арктический падел — Федерация падел России по Мурманской области</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Golos+Text:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#071a36;
+  --navy2:#0a2348;
+  --darkblue:#00457C;
+  --blue:#0E72B5;
+  --sky:#6FC4EC;
+  --orange:#E8430E;
+  --gold:#D6B720;
+  --green:#9BE84B;
+  --aurora:#6CF2A6;
+  --white:#ffffff;
+  --ink:#0c1830;
+  --muted:#5a6b85;
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Golos Text',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3,.display{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:1.02}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* ---------- aurora background utility ---------- */
+.aurora-bg{position:relative;overflow:hidden;background:var(--navy)}
+.aurora-bg::before{
+  content:"";position:absolute;inset:-20% -10% auto -10%;height:70%;
+  background:
+    radial-gradient(60% 80% at 20% 0%, rgba(108,242,166,.55), transparent 60%),
+    radial-gradient(55% 75% at 55% -5%, rgba(155,232,75,.45), transparent 60%),
+    radial-gradient(60% 80% at 85% 0%, rgba(108,196,236,.5), transparent 62%);
+  filter:blur(8px);opacity:.9;pointer-events:none;
+}
+.aurora-bg::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 90% at 50% 120%, rgba(7,26,54,0), rgba(7,26,54,.6) 70%);
+  pointer-events:none;
+}
+.stars{position:absolute;inset:0;background-image:
+  radial-gradient(1.5px 1.5px at 12% 18%, #fff7, transparent),
+  radial-gradient(1.5px 1.5px at 28% 8%, #fff5, transparent),
+  radial-gradient(1px 1px at 47% 22%, #fff6, transparent),
+  radial-gradient(1.5px 1.5px at 67% 12%, #fff5, transparent),
+  radial-gradient(1px 1px at 82% 26%, #fff6, transparent),
+  radial-gradient(1.5px 1.5px at 92% 9%, #fff5, transparent);
+  pointer-events:none}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(7,26,54,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:42px;width:42px;border-radius:9px}
+.brand .bt{color:#fff}
+.brand .bt b{font-family:'Oswald';font-weight:700;font-size:18px;letter-spacing:.04em;display:block;text-transform:uppercase}
+.brand .bt span{font-size:11px;color:var(--sky);letter-spacing:.02em}
+.nav{display:flex;gap:26px;align-items:center}
+.nav a{color:#dfe9f7;font-size:15px;font-weight:500}
+.nav a:hover{color:var(--sky)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:'Golos Text';font-weight:700;font-size:15px;
+  background:var(--orange);color:#fff;padding:12px 22px;border-radius:40px;border:0;cursor:pointer;transition:.15s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.btn.sky{background:var(--sky);color:#06243f}
+.btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fff}
+.btn.lg{font-size:17px;padding:16px 30px}
+
+/* ---------- hero ---------- */
+.hero{min-height:88vh;display:flex;align-items:center;padding:60px 0 90px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2}
+.fed-tag{display:inline-flex;align-items:center;gap:8px;color:var(--sky);font-size:13px;font-weight:600;letter-spacing:.05em;
+  text-transform:uppercase;border:1px solid rgba(108,196,236,.4);padding:7px 14px;border-radius:30px;margin-bottom:26px}
+.hero h1{color:#fff;font-weight:700;font-size:clamp(46px,7vw,104px)}
+.hero h1 .pad{color:var(--green)}
+.hero .lead{color:#cfe0f3;font-size:clamp(17px,1.5vw,21px);margin:22px 0 14px;max-width:540px;font-weight:400}
+.badge24{display:inline-flex;align-items:center;gap:10px;background:rgba(214,183,32,.14);border:1px solid rgba(214,183,32,.5);
+  color:var(--gold);padding:9px 16px;border-radius:30px;font-weight:600;font-size:14px;margin:8px 0 30px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-visual{position:relative}
+.hero-visual .logo-card{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.1)}
+.hero-visual .logo-card img{width:100%}
+.float-chip{position:absolute;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 14px 34px rgba(3,18,40,.3);display:flex;align-items:center;gap:11px}
+.float-chip .ic{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-size:18px}
+.float-chip b{font-family:'Oswald';font-size:15px;text-transform:uppercase;display:block;line-height:1}
+.float-chip span{font-size:12px;color:var(--muted)}
+.chip-a{top:-18px;right:18px}
+.chip-b{bottom:-20px;left:-18px}
+
+/* ---------- slogan block (brandbook square) ---------- */
+.slogan-strip{background:var(--darkblue);position:relative;overflow:hidden}
+.slogan-strip .wrap{display:flex;align-items:center;justify-content:center;gap:26px;padding:34px 24px;flex-wrap:wrap}
+.slogan-block{font-family:'Oswald';font-weight:700;color:#fff;font-size:clamp(30px,4.4vw,58px);text-transform:uppercase;line-height:.95;text-align:center}
+.slogan-block .accent{color:var(--gold)}
+.slogan-hash{color:var(--sky);font-family:'Golos Text';font-weight:700;font-size:clamp(15px,1.6vw,20px);letter-spacing:.02em}
+.dots-deco{position:absolute;inset:0;opacity:.16;background-image:radial-gradient(2px 2px at 10px 10px,#fff 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+
+/* ---------- booking ---------- */
+.booking{padding:74px 0;background:#f4f8fc}
+.section-head{text-align:center;max-width:720px;margin:0 auto 40px}
+.eyebrow{color:var(--orange);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-family:'Golos Text'}
+.section-head h2{font-size:clamp(30px,4vw,48px);color:var(--ink);margin:12px 0 14px}
+.section-head p{color:var(--muted);font-size:18px}
+.booking-card{background:#fff;border-radius:24px;box-shadow:0 24px 70px rgba(8,40,80,.12);overflow:hidden;border:1px solid #e3edf6;max-width:1000px;margin:0 auto}
+.booking-card .bhead{background:linear-gradient(120deg,var(--darkblue),var(--blue));color:#fff;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.booking-card .bhead h3{font-size:24px}
+.booking-card .bhead p{color:#cfe6fb;font-size:14px;font-weight:400;font-family:'Golos Text';text-transform:none;margin-top:4px}
+.booking-frame{width:100%;height:760px;border:0;display:block;background:#fff}
+.booking-note{text-align:center;color:var(--muted);font-size:14px;margin-top:18px}
+
+/* ---------- what is padel ---------- */
+.what{padding:84px 0}
+.what .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:44px}
+.wcard{background:#fff;border:1px solid #e8eef6;border-radius:20px;padding:28px 24px;transition:.18s}
+.wcard:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(8,40,80,.1)}
+.wcard .num{font-family:'Oswald';font-weight:700;font-size:40px;color:var(--sky);line-height:1}
+.wcard h3{font-size:19px;margin:12px 0 8px;color:var(--ink);text-transform:none;font-family:'Oswald';letter-spacing:0}
+.wcard p{color:var(--muted);font-size:15px}
+.padel-explain{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:64px;
+  background:linear-gradient(120deg,#f4f8fc,#eaf3fb);border-radius:28px;padding:46px;border:1px solid #e3edf6}
+.padel-explain h2{font-size:clamp(26px,3.2vw,40px);color:var(--ink);margin-bottom:16px}
+.padel-explain p{color:#3f5168;font-size:17px;margin-bottom:14px}
+.imgslot{border-radius:20px;min-height:300px;background:
+   linear-gradient(135deg,rgba(14,114,181,.12),rgba(108,196,236,.18)),
+   repeating-linear-gradient(45deg,#dde9f5,#dde9f5 14px,#d3e3f1 14px,#d3e3f1 28px);
+  display:grid;place-items:center;color:#5a83ad;text-align:center;font-size:14px;padding:24px;border:1.5px dashed #a9c6e2}
+.imgslot span{max-width:240px}
+.scene{border-radius:20px;overflow:hidden;box-shadow:0 18px 50px rgba(8,40,80,.22);border:1px solid #e3edf6;line-height:0}
+.scene img{width:100%;display:block}
+
+/* ---------- why padel (from posts) ---------- */
+.why{padding:0 0 88px}
+.why .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.pcard{border-radius:20px;padding:30px 26px;color:#fff;position:relative;overflow:hidden;min-height:210px}
+.pcard h3{font-size:21px;text-transform:none;font-family:'Oswald';letter-spacing:0;margin-bottom:10px}
+.pcard p{font-size:15px;opacity:.94;font-weight:400}
+.pcard .em{font-size:30px;display:block;margin-bottom:14px}
+.pc1{background:linear-gradient(135deg,#0E72B5,#0a4f86)}
+.pc2{background:linear-gradient(135deg,#E8430E,#c0350a)}
+.pc3{background:linear-gradient(135deg,#1aa06a,#0c7a4d)}
+.pc4{background:linear-gradient(135deg,#6FC4EC,#2f93cc);color:#06243f}
+.pc4 p{opacity:.85}
+.pc5{background:linear-gradient(135deg,#D6B720,#b2950f);color:#2a2300}
+.pc5 p{opacity:.85}
+.pc6{background:linear-gradient(135deg,#00457C,#072b52)}
+
+/* ---------- north / 24h ---------- */
+.north{padding:90px 0;color:#fff}
+.north .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.north h2{font-size:clamp(30px,4.2vw,52px);color:#fff;margin-bottom:18px}
+.north h2 em{color:var(--gold);font-style:normal}
+.north p{color:#cfe0f3;font-size:18px;margin-bottom:18px}
+.north-stats{display:flex;gap:18px;margin-top:30px;flex-wrap:wrap}
+.nstat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:20px 22px;min-width:150px}
+.nstat b{font-family:'Oswald';font-size:34px;color:var(--aurora);display:block;line-height:1}
+.nstat span{font-size:13px;color:#bcd2ec}
+.sun-card{position:relative;border-radius:26px;overflow:hidden;min-height:360px;border:1px solid rgba(255,255,255,.14);
+  background:
+   radial-gradient(70% 60% at 50% 120%, rgba(214,183,32,.5), transparent 60%),
+   linear-gradient(180deg,#0a2348,#071a36);display:grid;place-items:center;text-align:center;padding:36px}
+.sun-card .moon{width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#fff6cf,#ffd84a 60%,#e8a90e);box-shadow:0 0 80px rgba(255,216,74,.6);margin-bottom:22px}
+.sun-card h3{color:#fff;font-size:24px}
+.sun-card p{color:#cfe0f3;font-size:15px;font-weight:400;font-family:'Golos Text';text-transform:none;margin-top:8px}
+
+/* ---------- federation ---------- */
+.fed{padding:84px 0;background:#f4f8fc}
+.fed .grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.fed h2{font-size:clamp(28px,3.6vw,44px);color:var(--ink);margin-bottom:18px}
+.fed p{color:#3f5168;font-size:17px;margin-bottom:14px}
+.fed .fed-logo{border-radius:24px;overflow:hidden;box-shadow:0 24px 60px rgba(8,40,80,.18)}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.tag{background:#fff;border:1px solid #d7e4f1;color:var(--blue);font-weight:600;font-size:14px;padding:8px 15px;border-radius:30px}
+
+/* ---------- cta footer ---------- */
+.cta{padding:80px 0;text-align:center;color:#fff}
+.cta .wrap{position:relative;z-index:2}
+.cta h2{font-size:clamp(32px,5vw,64px);color:#fff}
+.cta h2 .pad{color:var(--green)}
+.cta p{color:#cfe0f3;font-size:19px;margin:18px auto 30px;max-width:560px}
+footer{background:#05152e;color:#9fb4d0;padding:46px 0 40px;font-size:14px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+footer h4{color:#fff;font-family:'Oswald';font-size:15px;letter-spacing:.05em;margin-bottom:14px;text-transform:uppercase}
+footer a{display:block;color:#9fb4d0;margin-bottom:8px}
+footer a:hover{color:var(--sky)}
+.foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.foot-brand img{width:46px;height:46px;border-radius:10px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:34px;padding-top:22px;color:#6f86a6;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .nav{display:none}
+  .topbar .wrap{height:60px}
+  .brand img{height:38px;width:38px}
+  .brand .bt b{font-size:15px;letter-spacing:.02em}
+  .brand .bt span{font-size:10px}
+  .topbar .btn{padding:10px 16px;font-size:13px}
+  .hero .wrap{grid-template-columns:1fr;gap:36px}
+  .hero-visual{order:-1;max-width:420px}
+  .what .grid{grid-template-columns:repeat(2,1fr)}
+  .why .grid{grid-template-columns:1fr}
+  .padel-explain{grid-template-columns:1fr;padding:30px}
+  .north .wrap{grid-template-columns:1fr;gap:34px}
+  .fed .grid{grid-template-columns:1fr;gap:30px}
+  footer .wrap{grid-template-columns:1fr}
+  .booking-frame{height:680px}
+}
+@media(max-width:520px){
+  .what .grid{grid-template-columns:1fr}
+  .brand .bt span{display:none}
+  .chip-a{right:4px;top:-12px}
+  .chip-b{left:4px;bottom:-12px}
+  .float-chip{padding:9px 12px}
+  .float-chip b{font-size:13px}
+  .float-chip span{font-size:11px}
+  .slogan-strip .wrap{flex-direction:column;gap:12px;padding:26px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="assets/logo-square.png" alt="Арктический падел">
+      <span class="bt"><b>Арктический падел</b><span>Мурманская область</span></span>
+    </a>
+    <nav class="nav">
+      <a href="#booking">Аренда корта</a>
+      <a href="#what">Что такое падел</a>
+      <a href="#why">Почему падел</a>
+      <a href="#north">Север 24/7</a>
+      <a href="#fed">Федерация</a>
+    </nav>
+    <a class="btn" href="#booking">Забронировать корт</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero aurora-bg" id="top">
+  <div class="stars"></div>
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="fed-tag">● Федерация падел России по Мурманской области</span>
+      <h1>На севере —<br><span class="pad">падел</span></h1>
+      <p class="lead">Самый северный открытый падел-корт в мире. Новый спорт Заполярья — динамичный, командный и понятный с первой игры.</p>
+      <span class="badge24">☀️ Играем круглые сутки — даже ночью под полярным солнцем</span>
+      <div class="hero-cta">
+        <a class="btn lg" href="#booking">Забронировать корт</a>
+        <a class="btn lg ghost" href="#what">Что такое падел?</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="logo-card"><img src="assets/logo-square.png" alt="Арктический падел — логотип"></div>
+      <div class="float-chip chip-a"><span class="ic" style="background:#eaf7e0">🎾</span><span><b>2–3 игры</b><span>и ты уже играешь</span></span></div>
+      <div class="float-chip chip-b"><span class="ic" style="background:#e7f3fb">👫</span><span><b>Всегда вчетвером</b><span>спорт + общение</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SLOGAN STRIP (brandbook style) -->
+<section class="slogan-strip">
+  <div class="dots-deco"></div>
+  <div class="wrap">
+    <div class="slogan-block">На севере — <span class="accent">падел!</span></div>
+    <div class="slogan-hash">#насеверажить&nbsp;&nbsp;#арктическийпадел</div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Расписание и аренда</span>
+      <h2>Забронируйте корт онлайн</h2>
+      <p>Выберите удобное время — день или ночь. Корт открыт круглосуточно.</p>
+    </div>
+    <div class="booking-card">
+      <div class="bhead">
+        <div><h3>Запись на аренду корта</h3><p>Выберите дату, время и количество игроков</p></div>
+        <a class="btn sky" href="https://demo.fitbase.io/booking-widget" target="_blank">Открыть в новом окне ↗</a>
+      </div>
+      <iframe class="booking-frame" src="https://demo.fitbase.io/booking-widget" title="Запись на аренду корта" loading="lazy"></iframe>
+    </div>
+    <p class="booking-note">Виджет онлайн-записи. Бронирование, оплата и подтверждение — в пару кликов.</p>
+  </div>
+</section>
+
+<!-- WHAT IS PADEL -->
+<section class="what" id="what">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Если вы здесь впервые</span>
+      <h2>Что такое падел?</h2>
+      <p>Самый быстрорастущий спорт в мире. Микс тенниса и сквоша на компактном корте со стеклянными стенами.</p>
+    </div>
+    <div class="grid">
+      <div class="wcard"><div class="num">4</div><h3>Играют вчетвером</h3><p>Две пары на корте. Это всегда про команду, общение и эмоции, а не одиночную тренировку.</p></div>
+      <div class="wcard"><div class="num">15м²</div><h3>Компактный корт</h3><p>Меньше беготни, чем в теннисе. Мяч отскакивает от стекла — розыгрыши длятся дольше и веселее.</p></div>
+      <div class="wcard"><div class="num">2–3</div><h3>Тренировки до игры</h3><p>Ракетка без струн, маленький корт, помощь партнёра. Полноценно играть начинаете почти сразу.</p></div>
+      <div class="wcard"><div class="num">∞</div><h3>Для любого возраста</h3><p>Низкий порог входа и небольшая нагрузка на суставы. Подходит и новичкам, и спортсменам.</p></div>
+    </div>
+
+    <div class="padel-explain">
+      <div>
+        <span class="eyebrow">Простыми словами</span>
+        <h2>Теннис, в который влюбляешься с первой игры</h2>
+        <p>В падел невозможно играть в одиночку — вы сразу попадаете в компанию. Договариваетесь с партнёром, переживаете розыгрыши, смеётесь над отскоками от стекла.</p>
+        <p>Нет двух одинаковых розыгрышей, поэтому мозг постоянно вовлечён, а тело получает полноценную кардио-нагрузку — и всё это незаметно, в формате игры.</p>
+        <p><b>Попробовал 2–3 раза — и затягивает.</b> Именно так падел захватил Европу, США и Ближний Восток. Теперь очередь Заполярья.</p>
+      </div>
+      <div class="scene"><img src="assets/scene-court.svg" alt="Падел-корт под открытым небом и северным сиянием"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PADEL -->
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Почему все переходят на падел</span>
+      <h2>6 причин выйти на корт</h2>
+    </div>
+    <div class="grid">
+      <div class="pcard pc1"><span class="em">📈</span><h3>Растёт быстрее тенниса</h3><p>Единственный спорт, который одновременно бурно растёт в Европе, США, Азии и на Ближнем Востоке.</p></div>
+      <div class="pcard pc2"><span class="em">⚡</span><h3>Лёгкий старт</h3><p>Уже через пару тренировок вы играете настоящие розыгрыши. Быстрый результат — высокая мотивация.</p></div>
+      <div class="pcard pc3"><span class="em">🤝</span><h3>Новый нетворкинг</h3><p>60–90 минут игры — идеальный формат, чтобы знакомиться и общаться. Связи здесь рождаются сами.</p></div>
+      <div class="pcard pc4"><span class="em">🏃</span><h3>Альтернатива залу</h3><p>Полноценная функциональная тренировка, на которую хочется идти. Вы не «тренируетесь» — вы играете.</p></div>
+      <div class="pcard pc5"><span class="em">✨</span><h3>Это lifestyle</h3><p>Встречи с друзьями, турниры, вечер после работы. Спорт превращается в приятную привычку.</p></div>
+      <div class="pcard pc6"><span class="em">💚</span><h3>Заряжает энергией</h3><p>Приходишь уставшим — уходишь с подъёмом. Особенно важно в короткий световой день Севера.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NORTH 24/7 -->
+<section class="north aurora-bg" id="north">
+  <div class="stars"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:var(--sky)">Уникально для всего мира</span>
+      <h2>Самый северный открытый корт. <em>Играем 24/7</em></h2>
+      <p>Летом за Полярным кругом солнце не заходит. Это значит, что на нашем корте можно играть круглые сутки — и днём, и глубокой ночью под мягким полярным светом.</p>
+      <p>Падел — всесезонный спорт, который не зависит от погоды и даёт энергию там, где её особенно не хватает зимой. Идеальная активность для Заполярья.</p>
+      <div class="north-stats">
+        <div class="nstat"><b>24/7</b><span>игра круглые сутки</span></div>
+        <div class="nstat"><b>№1</b><span>самый северный открытый корт в мире</span></div>
+        <div class="nstat"><b>365</b><span>дней в году</span></div>
+      </div>
+    </div>
+    <div class="sun-card">
+      <div class="moon"></div>
+      <h3>Падел под полярным солнцем</h3>
+      <p>Партия в 2 часа ночи — здесь это норма, а не легенда.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEDERATION -->
+<section class="fed" id="fed">
+  <div class="wrap">
+    <div class="grid">
+      <div class="fed-logo"><img src="assets/logo-wide.jpeg" alt="Арктический падел"></div>
+      <div>
+        <span class="eyebrow">О проекте</span>
+        <h2>Арктический падел</h2>
+        <p>Проект развивает падел в Мурманской области в рамках работы региона по вовлечению жителей в здоровый образ жизни.</p>
+        <p>Мы строим сообщество игроков, проводим первые турниры и открываем новый спорт для тех, кто никогда не держал ракетку. Падел в Заполярье — это про движение, энергию и живое общение круглый год.</p>
+        <p style="color:var(--blue);font-weight:600">Федерация падел России по Мурманской области</p>
+        <div class="tags">
+          <span class="tag">#насеверажить</span>
+          <span class="tag">#арктическийпадел</span>
+          <span class="tag">ЗОЖ Мурманской области</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta aurora-bg">
+  <div class="stars"></div>
+  <div class="wrap">
+    <h2>Выходи на корт — <span class="pad">на севере падел!</span></h2>
+    <p>Забронируйте корт онлайн и попробуйте спорт, в который влюбляется весь мир. Первая игра — и вы всё поймёте.</p>
+    <a class="btn lg" href="#booking">Забронировать корт</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="foot-brand">
+        <img src="assets/logo-square.png" alt="Арктический падел">
+        <div><b style="color:#fff;font-family:'Oswald';font-size:17px;text-transform:uppercase;display:block">Арктический падел</b>
+        <span style="font-size:13px">Федерация падел России<br>по Мурманской области</span></div>
+      </div>
+      <p style="max-width:300px">Развитие падела в Заполярье в рамках программы вовлечения жителей в здоровый образ жизни.</p>
+    </div>
+    <div>
+      <h4>Навигация</h4>
+      <a href="#booking">Аренда корта</a>
+      <a href="#what">Что такое падел</a>
+      <a href="#why">Почему падел</a>
+      <a href="#north">Север 24/7</a>
+      <a href="#fed">О федерации</a>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <a href="#">ВКонтакте</a>
+      <a href="#">Telegram-канал</a>
+      <a href="#booking">Записаться на корт</a>
+      <a href="#">Мурманск</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Арктический падел · Мурманская область</span>
+    <span>#насеверажить</span>
+  </div>
+</footer>
+
+</body>
+</html>
