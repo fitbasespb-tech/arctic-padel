@@ -6,7 +6,7 @@
 <title>Арктический падел — Федерация падел России по Мурманской области</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Golos+Text:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Bitter:wght@600;700;800;900&family=Golos+Text:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#071a36;
@@ -78,7 +78,7 @@ img{max-width:100%;display:block}
 .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2}
 .fed-tag{display:inline-flex;align-items:center;gap:8px;color:var(--sky);font-size:13px;font-weight:600;letter-spacing:.05em;
   text-transform:uppercase;border:1px solid rgba(108,196,236,.4);padding:7px 14px;border-radius:30px;margin-bottom:26px}
-.hero h1{color:#fff;font-weight:700;font-size:clamp(46px,7vw,104px)}
+.hero h1{color:#fff;font-family:'Bitter',serif;font-weight:600;font-size:clamp(48px,7.4vw,108px);letter-spacing:0;display:inline-block;transform:scaleX(.84);transform-origin:left}
 .hero h1 .pad{color:var(--green)}
 .hero .lead{color:#cfe0f3;font-size:clamp(17px,1.5vw,21px);margin:22px 0 14px;max-width:540px;font-weight:400}
 .badge24{display:inline-flex;align-items:center;gap:10px;background:rgba(214,183,32,.14);border:1px solid rgba(214,183,32,.5);
@@ -97,7 +97,7 @@ img{max-width:100%;display:block}
 /* ---------- slogan block (brandbook square) ---------- */
 .slogan-strip{background:var(--darkblue);position:relative;overflow:hidden}
 .slogan-strip .wrap{display:flex;align-items:center;justify-content:center;gap:26px;padding:34px 24px;flex-wrap:wrap}
-.slogan-block{font-family:'Oswald';font-weight:700;color:#fff;font-size:clamp(30px,4.4vw,58px);text-transform:uppercase;line-height:.95;text-align:center}
+.slogan-block{font-family:'Bitter',serif;font-weight:600;color:#fff;font-size:clamp(30px,4.4vw,58px);text-transform:uppercase;line-height:.95;text-align:center;display:inline-block;transform:scaleX(.84);transform-origin:center}
 .slogan-block .accent{color:var(--gold)}
 .slogan-hash{color:var(--sky);font-family:'Golos Text';font-weight:700;font-size:clamp(15px,1.6vw,20px);letter-spacing:.02em}
 .dots-deco{position:absolute;inset:0;opacity:.16;background-image:radial-gradient(2px 2px at 10px 10px,#fff 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
@@ -114,6 +114,50 @@ img{max-width:100%;display:block}
 .booking-card .bhead p{color:#cfe6fb;font-size:14px;font-weight:400;font-family:'Golos Text';text-transform:none;margin-top:4px}
 .booking-frame{width:100%;height:760px;border:0;display:block;background:#fff}
 .booking-note{text-align:center;color:var(--muted);font-size:14px;margin-top:18px}
+/* booking widget (custom) */
+.bhead-club{display:flex;align-items:center;gap:11px}
+.bhead-club img{width:42px;height:42px;border-radius:11px;display:block}
+.bhead-club b{display:block;font-family:'Oswald';font-size:16px;letter-spacing:.02em;text-transform:uppercase;line-height:1.05}
+.bhead-club .bc-sub{display:block;font-size:12px;color:#cfe6fb;font-family:'Golos Text';font-weight:400}
+.bw{padding:26px 28px 28px}
+.bw-row{display:flex;gap:18px;padding:16px 0;border-bottom:1px solid #eef3f8}
+.bw-row:first-child{padding-top:2px}
+.bw-label{flex:0 0 78px;font-weight:700;color:var(--ink);font-size:14px;padding-top:8px}
+.bw-courts{display:flex;gap:10px;flex-wrap:wrap}
+.court{display:flex;flex-direction:column;align-items:flex-start;gap:2px;background:#f4f8fc;border:1.5px solid #e1ebf4;border-radius:14px;padding:10px 16px;cursor:pointer;transition:.15s;font-family:'Golos Text';font-weight:700;color:var(--ink);font-size:15px}
+.court span{font-weight:500;font-size:12px;color:var(--muted)}
+.court:hover{border-color:var(--sky)}
+.court.is-active{background:#eaf6fd;border-color:var(--blue);box-shadow:0 0 0 2px rgba(14,114,181,.12)}
+.bw-dates{display:flex;gap:8px;flex-wrap:wrap}
+.dchip{min-width:62px;text-align:center;background:#f4f8fc;border:1.5px solid #e1ebf4;border-radius:12px;padding:8px 10px;cursor:pointer;transition:.15s;font-family:'Golos Text'}
+.dchip-d{font-weight:700;color:var(--ink);font-size:15px;line-height:1.1}
+.dchip-w{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.dchip.is-active{background:var(--blue);border-color:var(--blue)}
+.dchip.is-active .dchip-d,.dchip.is-active .dchip-w{color:#fff}
+.dchip:hover:not(.is-active){border-color:var(--sky)}
+.bw-slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px;flex:1}
+.slot{position:relative;background:#f4f8fc;border:1.5px solid #e1ebf4;border-radius:11px;padding:11px 6px;cursor:pointer;transition:.12s;font-family:'Golos Text';font-weight:700;color:var(--ink);font-size:15px;text-align:center}
+.slot small{display:block;font-weight:500;font-size:10px;color:var(--muted);margin-top:1px}
+.slot:hover:not(.busy):not(.is-active){border-color:var(--sky)}
+.slot.is-active{background:var(--green);border-color:var(--green);color:#10300a}
+.slot.is-active small{color:#2c5413}
+.slot.busy{background:#f0f2f5;border-color:#e7ebf0;color:#b3bccb;cursor:not-allowed;text-decoration:line-through}
+.slot.night small{color:var(--blue)}
+.slot.is-active.night small{color:#2c5413}
+.bw-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:22px}
+.bw-sum{font-size:15px;color:var(--muted)}
+.bw-sum b{color:var(--ink);font-size:16px}
+.bw-sum .bw-empty{color:var(--muted)}
+.bw-go{background:var(--orange);color:#fff;border:0;border-radius:40px;padding:14px 30px;font-family:'Golos Text';font-weight:700;font-size:16px;cursor:pointer;transition:.15s}
+.bw-go[disabled]{background:#cdd7e3;cursor:not-allowed}
+.bw-go:not([disabled]):hover{filter:brightness(1.05)}
+.bw-ok{display:none;margin-top:20px;background:#eef9e6;border:1.5px solid #cdeaad;border-radius:16px;padding:18px 22px}
+.bw-ok.show{display:block}
+.bw-ok b{color:#2c5413}
+.bw-ok p{margin:6px 0 12px;color:#3a5226;font-size:14px}
+.bw-ok a{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:11px 22px;border-radius:40px;font-weight:700;text-decoration:none;font-size:14px}
+.bw-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:13px;color:var(--muted)}
+.bw-legend i{width:13px;height:13px;border-radius:4px;display:inline-block;vertical-align:-2px;margin-right:6px}
 
 /* ---------- what is padel ---------- */
 .what{padding:84px 0}
@@ -182,7 +226,7 @@ img{max-width:100%;display:block}
 /* ---------- cta footer ---------- */
 .cta{padding:80px 0;text-align:center;color:#fff}
 .cta .wrap{position:relative;z-index:2}
-.cta h2{font-size:clamp(32px,5vw,64px);color:#fff}
+.cta h2{font-family:'Bitter',serif;font-weight:600;font-size:clamp(34px,5.2vw,66px);color:#fff;letter-spacing:0}
 .cta h2 .pad{color:var(--green)}
 .cta p{color:#cfe0f3;font-size:19px;margin:18px auto 30px;max-width:560px}
 footer{background:#05152e;color:#9fb4d0;padding:46px 0 40px;font-size:14px}
@@ -221,6 +265,13 @@ footer a:hover{color:var(--sky)}
   .float-chip b{font-size:13px}
   .float-chip span{font-size:11px}
   .slogan-strip .wrap{flex-direction:column;gap:12px;padding:26px 24px}
+  .bw{padding:20px 18px 22px}
+  .bw-row{flex-direction:column;gap:10px;padding:14px 0}
+  .bw-label{flex-basis:auto;padding-top:0}
+  .court{flex:1}
+  .bw-slots{grid-template-columns:repeat(auto-fill,minmax(70px,1fr))}
+  .bw-foot{flex-direction:column;align-items:stretch}
+  .bw-go{width:100%}
 }
 </style>
 </head>
@@ -285,12 +336,48 @@ footer a:hover{color:var(--sky)}
     </div>
     <div class="booking-card">
       <div class="bhead">
-        <div><h3>Запись на аренду корта</h3><p>Выберите дату, время и количество игроков</p></div>
-        <a class="btn sky" href="https://demo.fitbase.io/booking-widget" target="_blank">Открыть в новом окне ↗</a>
+        <div><h3>Запись на аренду корта</h3><p>Выберите корт, дату и время — открыто круглосуточно</p></div>
+        <span class="bhead-club">
+          <img src="assets/logo-square.png" alt="Арктический падел">
+          <span><b>Арктический падел</b><span class="bc-sub">Мурманск</span></span>
+        </span>
       </div>
-      <iframe class="booking-frame" src="https://demo.fitbase.io/booking-widget" title="Запись на аренду корта" loading="lazy"></iframe>
+      <div class="bw">
+        <div class="bw-row">
+          <div class="bw-label">Корт</div>
+          <div class="bw-courts" id="bwCourts">
+            <button class="court is-active" data-court="Корт №1 «Сияние»">Корт №1 «Сияние»<span>открытый · панорама</span></button>
+            <button class="court" data-court="Корт №2 «Полярный»">Корт №2 «Полярный»<span>открытый · у воды</span></button>
+          </div>
+        </div>
+        <div class="bw-row">
+          <div class="bw-label">Дата</div>
+          <div class="bw-dates" id="bwDates"></div>
+        </div>
+        <div class="bw-row" style="border-bottom:0">
+          <div class="bw-label">Время</div>
+          <div style="flex:1">
+            <div class="bw-slots" id="bwSlots"></div>
+            <div class="bw-legend">
+              <span><i style="background:#f4f8fc;border:1.5px solid #e1ebf4"></i>свободно</span>
+              <span><i style="background:var(--green)"></i>выбрано</span>
+              <span><i style="background:#f0f2f5;border:1.5px solid #e7ebf0"></i>занято</span>
+              <span><i style="background:#fff;border:1.5px solid var(--blue)"></i>🌙 ночной слот — тоже играем</span>
+            </div>
+          </div>
+        </div>
+        <div class="bw-foot">
+          <div class="bw-sum" id="bwSum"><span class="bw-empty">Выберите время — стоимость рассчитается автоматически</span></div>
+          <button class="bw-go" id="bwGo" disabled>Забронировать</button>
+        </div>
+        <div class="bw-ok" id="bwOk">
+          <b>Заявка сформирована ✅</b>
+          <p id="bwOkText"></p>
+          <a id="bwOkLink" href="https://t.me/" target="_blank">Подтвердить в Telegram →</a>
+        </div>
+      </div>
     </div>
-    <p class="booking-note">Виджет онлайн-записи. Бронирование, оплата и подтверждение — в пару кликов.</p>
+    <p class="booking-note">1 час игры — 2 000 ₽ (день и ночь). Ракетки и мячи — в аренду на месте. Бронь подтверждаем в Telegram.</p>
   </div>
 </section>
 
@@ -312,7 +399,7 @@ footer a:hover{color:var(--sky)}
     <div class="padel-explain">
       <div>
         <span class="eyebrow">Простыми словами</span>
-        <h2>Теннис, в который влюбляешься с первой игры</h2>
+        <h2>«Теннис», в который влюбляешься с первой игры</h2>
         <p>В падел невозможно играть в одиночку — вы сразу попадаете в компанию. Договариваетесь с партнёром, переживаете розыгрыши, смеётесь над отскоками от стекла.</p>
         <p>Нет двух одинаковых розыгрышей, поэтому мозг постоянно вовлечён, а тело получает полноценную кардио-нагрузку — и всё это незаметно, в формате игры.</p>
         <p><b>Попробовал 2–3 раза — и затягивает.</b> Именно так падел захватил Европу, США и Ближний Восток. Теперь очередь Заполярья.</p>
@@ -426,6 +513,87 @@ footer a:hover{color:var(--sky)}
     <span>#насеверажить</span>
   </div>
 </footer>
+
+<script>
+(function(){
+  var PRICE=2000;
+  var courts=document.getElementById('bwCourts');
+  var datesEl=document.getElementById('bwDates');
+  var slotsEl=document.getElementById('bwSlots');
+  var sumEl=document.getElementById('bwSum');
+  var goBtn=document.getElementById('bwGo');
+  var okBox=document.getElementById('bwOk');
+  var okText=document.getElementById('bwOkText');
+  if(!courts) return;
+  var WD=['вс','пн','вт','ср','чт','пт','сб'];
+  var MN=['янв','фев','мар','апр','мая','июн','июл','авг','сен','окт','ноя','дек'];
+  var sel={court:'Корт №1 «Сияние»',dateKey:null,dateLabel:null,time:null};
+
+  // dates: next 7 days
+  var today=new Date();
+  for(var i=0;i<7;i++){
+    var d=new Date(today.getFullYear(),today.getMonth(),today.getDate()+i);
+    var b=document.createElement('button');
+    b.className='dchip'+(i===0?' is-active':'');
+    b.dataset.key=d.getFullYear()+'-'+d.getMonth()+'-'+d.getDate();
+    b.dataset.label=d.getDate()+' '+MN[d.getMonth()];
+    b.innerHTML='<span class="dchip-d">'+d.getDate()+'</span><span class="dchip-w">'+(i===0?'сегодня':WD[d.getDay()])+'</span>';
+    datesEl.appendChild(b);
+    if(i===0){sel.dateKey=b.dataset.key;sel.dateLabel=b.dataset.label;}
+  }
+
+  // deterministic "busy" pattern per date+court
+  function hash(s){var h=0;for(var i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))>>>0;}return h;}
+  function renderSlots(){
+    slotsEl.innerHTML='';sel.time=null;updateSum();
+    var seed=hash(sel.court+sel.dateKey);
+    for(var h=7;h<=25;h++){ // 07:00 .. 01:00 next day
+      var hh=h%24;
+      var label=(hh<10?'0':'')+hh+':00';
+      var night=(hh>=22||hh<7);
+      var busy=((seed>>(h%16))&1)&& (h%3!==0);
+      var b=document.createElement('button');
+      b.className='slot'+(night?' night':'')+(busy?' busy':'');
+      b.innerHTML=label+'<small>'+(night?'🌙 ночь':'2000 ₽')+'</small>';
+      if(!busy){b.dataset.time=label;}
+      slotsEl.appendChild(b);
+    }
+  }
+  function updateSum(){
+    if(sel.time){
+      sumEl.innerHTML='<b>'+sel.court+'</b> · '+sel.dateLabel+', '+sel.time+'–'+nextHour(sel.time)+' · <b>'+PRICE+' ₽</b>';
+      goBtn.disabled=false;
+    }else{
+      sumEl.innerHTML='<span class="bw-empty">Выберите время — стоимость рассчитается автоматически</span>';
+      goBtn.disabled=true;
+    }
+  }
+  function nextHour(t){var h=(parseInt(t)+1)%24;return (h<10?'0':'')+h+':00';}
+
+  courts.addEventListener('click',function(e){
+    var c=e.target.closest('.court');if(!c)return;
+    [].forEach.call(courts.children,function(x){x.classList.remove('is-active')});
+    c.classList.add('is-active');sel.court=c.dataset.court;renderSlots();okBox.classList.remove('show');
+  });
+  datesEl.addEventListener('click',function(e){
+    var d=e.target.closest('.dchip');if(!d)return;
+    [].forEach.call(datesEl.children,function(x){x.classList.remove('is-active')});
+    d.classList.add('is-active');sel.dateKey=d.dataset.key;sel.dateLabel=d.dataset.label;renderSlots();okBox.classList.remove('show');
+  });
+  slotsEl.addEventListener('click',function(e){
+    var s=e.target.closest('.slot');if(!s||s.classList.contains('busy'))return;
+    [].forEach.call(slotsEl.children,function(x){x.classList.remove('is-active')});
+    s.classList.add('is-active');sel.time=s.dataset.time;updateSum();okBox.classList.remove('show');
+  });
+  goBtn.addEventListener('click',function(){
+    if(!sel.time)return;
+    okText.textContent=sel.court+' · '+sel.dateLabel+', '+sel.time+'–'+nextHour(sel.time)+' · '+PRICE+' ₽. Напишите нам — закрепим бронь и пришлём подтверждение.';
+    okBox.classList.add('show');okBox.scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+
+  renderSlots();
+})();
+</script>
 
 </body>
 </html>
